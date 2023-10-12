@@ -1,0 +1,77 @@
+/* Estilos para el contenedor principal */
+.container {
+    padding: 20px;
+    /* background-color: #FF5733; */
+  }
+  
+/* Estilos para el navbar */
+.navbar {
+    background-color: #fff030 !important; /* Cambia este color al que desees */
+    color: white;
+  }
+  
+  
+  .navbar-brand {
+    font-size: 24px;
+  }
+  
+  /* Estilos para el botón de carrito */
+
+  .cart {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: auto;
+  }
+
+.btn-cart {
+  background-color: #ff9308; /* Color de fondo del botón */
+  border-color: #ff9308; /* Color del borde del botón */
+  color: white; /* Color del texto del botón */
+}
+
+/* Cambio de color de fondo en :focus */
+.btn-cart:focus {
+    background-color: #ff9308 !important;
+    border-color: #fff030 !important;
+    color: white !important;
+  }
+  
+  /* Cambio de color de fondo en :active */
+  .btn-cart:active {
+    background-color:#ff9308  !important;
+    border-color: #fff030 !important;
+    color: white !important;
+  }
+  
+  /* Cambio de color de fondo en :hover */
+  .btn-cart:hover {
+    background-color:#ed8a08  !important;
+    border-color: #ed8a08 !important;
+    color: white !important;
+  }
+  
+  /* Estilos generales del botón */
+  .btn-cart {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: white !important;
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    border-radius: 4px; /* Añade esquinas redondeadas */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-decoration: none; /* Quita subrayado de enlaces (si es un enlace) */
+    display: inline-block; /* Hace que el botón sea un elemento en línea */
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  }
+  
+  /* Estilos para el icono dentro del botón */
+  .btn-cart i {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  /* Cambio de color de fondo en :hover para el icono (si es necesario) */
+  .btn-cart:hover i {
+    color: white;
+  }
