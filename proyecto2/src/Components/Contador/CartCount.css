@@ -1,0 +1,19 @@
+.btn-group-fixed-width {
+    width: 220px; /* Ancho fijo deseado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-no-margin-padding {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .btn-outline-primary {
+    width: 220px;
+  }
+
+  .dieta {
+    width: 50px;
+  }
