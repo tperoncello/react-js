@@ -6,7 +6,6 @@ import ItemListContainer from './Components/MensajesInicio/ItemListContainer';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import CartCount from './Components/Contador/CartCount';
 import Error404 from '../src/Components/Error404';  // Corrige la ruta del componente Error404
 import CardMj from '../src/Components/MensajesInicio/CardMj';
 import Televisores from './Components/MensajesInicio/Televisores';
@@ -20,19 +19,20 @@ import ItemDetail from './Components/detail/ItemDetail'; // Ajusta la ruta a la 
 
 
 
+
+
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <NavBar />
         <Routes>
-          
-        <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" />} />
+          <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" />} />
           <Route path="/category/:id" element={<ItemListContainer />} />
 
-          {/* Configura la ruta para los detalles del producto */}
-          <Route path="/item/:id" element={<ItemDetail />} />
-          <Route path="/item/:productId" element={<ItemDetailContainer />} />
+          {/* Ruta para los detalles del producto */}
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/category/:id" element={<ItemDetail />} />
         
           <Route path="/televisores" element={<Televisores />} />
           <Route path="/camaras" element={<Camaras />} />
@@ -45,10 +45,11 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
         
+        {/* Elimina el componente HomePage del BrowserRouter y colócalo fuera */}
         <HomePage />
       </BrowserRouter>
     </div>
   );
 }
 
-export default App
+export default App;

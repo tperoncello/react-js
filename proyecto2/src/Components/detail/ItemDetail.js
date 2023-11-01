@@ -1,22 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import ItemCount from '../ItemContent'; // Asegúrate de que la ruta de importación sea correcta
+import React from 'react';
 
-function ItemDetail({ match }) {
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    // Aquí haces una solicitud para obtener los detalles del producto
-    // Puedes usar fetch o axios u otra librería para hacer la solicitud a tu API
-    fetch(`URL_DE_TU_API/productos/${match.params.id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((error) => {
-        console.error('Error al obtener detalles del producto:', error);
-      });
-  }, [match.params.id]);
-
+function ItemDetail({ product }) {
   if (!product) {
     return <div>Cargando...</div>;
   }
@@ -28,11 +12,9 @@ function ItemDetail({ match }) {
       <p>Precio: ${product.price}</p>
       <p>Stock disponible: {product.stock}</p>
       {/* Agrega cualquier otra información sobre el producto que desees mostrar */}
-
-      {/* Aquí puedes agregar el componente ItemCount si es relevante */}
-      <ItemCount stockItems={product.stock} />
     </div>
   );
 }
 
 export default ItemDetail;
+
