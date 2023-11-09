@@ -1,5 +1,5 @@
 .btn-group-fixed-width {
-    width: 220px; /* Ancho fijo deseado */
+    width: 220px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,5 +17,3 @@
   .dieta {
     width: 50px;
   }
-
-  

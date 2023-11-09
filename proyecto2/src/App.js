@@ -23,10 +23,6 @@ function App() {
               <Route path="/cardmj" element={<CardMj />} />
             </Routes>           
           </BrowserRouter>
-          
-
-
-         
         </div>
   );
 }

@@ -4,14 +4,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 15px; /* Ajusta el margen según sea necesario */
+    margin-top: 15px; 
   }
   
-  /* .row {
-     
-  } */
   
   h2 {
-    font-size: 33px; /* Ajusta el tamaño de fuente según sea necesario */
-    margin-bottom: 20px; /* Ajusta el margen según sea necesario */
+    font-size: 33px; 
+    margin-bottom: 20px;
   }

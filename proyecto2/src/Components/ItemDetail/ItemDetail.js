@@ -8,9 +8,8 @@ const ItemDetail = ({ item, stockItems }) => {
 
   const handleAddToCart = (quantity) => {
     setCartCount(cartCount + quantity);
-    // Puedes agregar aquí la lógica para agregar los productos al carrito
-    // por ejemplo, guardarlos en un estado del componente padre.
-    // También puedes mostrar una alerta aquí si lo deseas.
+    // agregar la lógica para agregar los productos al carrito
+    // También mostrar una alerta
   };
 
   return (

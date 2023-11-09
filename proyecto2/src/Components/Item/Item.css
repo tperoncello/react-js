@@ -1,17 +1,16 @@
-
 .text-decoration-none {
     text-decoration: none;
   }
   
   .contenedor {
     margin: 10px;
-    height: 300px; /* Establece la altura fija del contenedor */
+    height: 300px; 
   }
   
   .card {
     border-radius: 10px;
     overflow: hidden;
-    height: 100%; /* Ocupa el 100% de la altura del contenedor */
+    height: 100%; 
     display: flex;
     flex-direction: column;
   }
@@ -23,7 +22,7 @@
   }
   
   .card-body {
-    flex-grow: 1; /* Hace que el cuerpo ocupe el espacio restante */
+    flex-grow: 1; 
     padding: 8px;
   }
   

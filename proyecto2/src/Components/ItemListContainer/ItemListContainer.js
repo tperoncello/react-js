@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import arrayProductos from '../Json/arrayProductos.json';
 import ItemList from '../ItemList/ItemList';
-import './ItemListContainer.css'; // Importa el archivo CSS
+import './ItemListContainer.css';
 
 const ItemListContainer = () => {
   const [item, setItem] = useState([]);

@@ -9,14 +9,14 @@ function CardMj() {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        // Simula una llamada a una API o alguna lógica para obtener los productos del carrito
+        
         const data = await new Promise((resolve) => {
           setTimeout(() => {
-            // Reemplaza esto con tu lógica real para obtener los productos del carrito
-            const cartItemIds = [1, 3, 5]; // IDs de productos en el carrito (puedes obtenerlos de tu lógica)
+           
+            const cartItemIds = [1, 3, 5];
             const cartItemsFromJson = arrayProductos.filter((item) => cartItemIds.includes(item.id));
             resolve(cartItemsFromJson);
-          }, 2000);
+          }, 1300);
         });
 
         setCartItems(data);
