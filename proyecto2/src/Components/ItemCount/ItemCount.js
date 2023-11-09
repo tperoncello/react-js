@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "./CartCount.css"; // Importa el archivo CSS
+import React, { useState } from 'react';
+import './CartCount.css';
 
-const CartCount = ({ stockItems }) => {
+function ItemCount({ cartItemCount, setCartItemCount }) {
   const [counter, setCounter] = useState(0);
-  const [cart, setCart] = useState([]); // Estado para mantener los productos en el carrito
+  const [cart, setCart] = useState([]);
 
   const incrementarStock = () => {
     setCounter(counter + 1);
@@ -16,17 +16,20 @@ const CartCount = ({ stockItems }) => {
   };
 
   const addToCart = () => {
-    if (stockItems >= counter) {
+    if (counter) {
       const product = {
-        name: "Producto", // Puedes usar el nombre del producto real aquí
+        name: 'Producto',
         quantity: counter,
       };
       setCart([...cart, product]);
-      setCounter(0); // Reiniciar el contador a 0 después de agregar al carrito
+      setCounter(0);
+      const newCartItemCount = cartItemCount + counter;
+      setCartItemCount(newCartItemCount);
     } else {
-      setCounter(1); // Sumar uno al contador si no hay ningún artículo
+      setCounter(1);
     }
   };
+
 
   return (
     <div className="container" id="itemcount">
@@ -43,9 +46,15 @@ const CartCount = ({ stockItems }) => {
         <div className="row ">
           <div className="col-md-2">
             <div className="btn-group-fixed-width" role="group" aria-label="Basic outlined example">
-              <button type="button" className="btn btn-outline-primary dieta" onClick={decrementarStock}>-</button>
-              <button type="button" className="btn btn-outline-primary dieta">{counter}</button>
-              <button type="button" className="btn btn-outline-primary dieta" onClick={incrementarStock}>+</button>
+              <button type="button" className="btn btn-outline-primary dieta" onClick={decrementarStock}>
+                -
+              </button>
+              <button type="button" className="btn btn-outline-primary dieta">
+                {counter}
+              </button>
+              <button type="button" className="btn btn-outline-primary dieta" onClick={incrementarStock}>
+                +
+              </button>
             </div>
           </div>
         </div>
@@ -59,7 +68,6 @@ const CartCount = ({ stockItems }) => {
       )}
     </div>
   );
-};
+}
 
-export default CartCount;    
-
+export default ItemCount;

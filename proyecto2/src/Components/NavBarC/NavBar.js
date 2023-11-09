@@ -1,13 +1,16 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import CardWidget from './CardWidget';
+import CartWidget from '../Cartwidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../Home.css';
 
 function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDropdown, setSelectedDropdown] = useState(null);
+  const [cartItemCount, setCartItemCount] = useState(0);
+
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -66,17 +69,17 @@ function NavBar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/celulares" onClick={closeDropdown}>
+              <Link className="nav-link" to={"/category/Celulares"} onClick={closeDropdown}>
                 Celulares
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/televisores" onClick={closeDropdown}>
+              <Link className="nav-link" to={"/category/Televisores"} onClick={closeDropdown}>
                 Televisores
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/consolas" onClick={closeDropdown}>
+              <Link className="nav-link" to={"/category/Consolas"} onClick={closeDropdown}>
                 Consolas
               </Link>
             </li>
@@ -90,17 +93,17 @@ function NavBar() {
               </Link>
               <ul className={`dropdown-menu ${isDropdownOpen && selectedDropdown === 'otros' ? 'show' : ''}`} aria-labelledby="otros">
                 <li>
-                  <Link className="dropdown-item" to="/computacion" onClick={closeDropdown}>
+                  <Link className="dropdown-item" to={"/category/notebooks"} onClick={closeDropdown}>
                     Computación
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/camaras" onClick={closeDropdown}>
+                  <Link className="dropdown-item" to={"/category/Cámaras"} onClick={closeDropdown}>
                     Cámaras
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/auriculares" onClick={closeDropdown}>
+                  <Link className="dropdown-item" to={"/category/Auriculares"} onClick={closeDropdown}>
                     Auriculares
                   </Link>
                 </li>
@@ -108,7 +111,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <CardWidget fontSizeClass="tuClaseDeFuente" circleContent={4} />
+        <CartWidget />
       </div>
     </nav>
   );

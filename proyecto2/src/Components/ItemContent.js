@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import CartCount from './Contador/CartCount';
+import CartCount from './ItemCount/ItemCount';
 
 function ItemContainer() {
   const [products, setProducts] = useState([]);
