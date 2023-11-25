@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-import './ItemDetail.css';
+import { Link } from 'react-router-dom';
+import { useCartContext } from '../Context/CartContext';
+import './ItemDetail.css'
 
-const ItemDetail = ({ item, stockItems }) => {
-  const [cartCount, setCartCount] = useState(0);
+const ItemDetail = ({ item }) => {
+  const [goToCart, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
 
-  const handleAddToCart = (quantity) => {
-    setCartCount(cartCount + quantity);
-    // agregar la lógica para agregar los productos al carrito
-    // También mostrar una alerta
+  const onAdd = (quantity) => {
+    setGoToCart(true);
+    addProduct(item, quantity);
   };
 
   return (
     <div className='item-detail'>
-      <div className='item-images'>
-        <img src={item.imagen} alt={item.nombre} />
-      </div>
-      <div className='item-details'>
-        <h2 className='item-title'>{item.nombre}</h2>
-        <p className='item-description'>{item.descripcion}</p>
-        <p className='item-price'>$ {item.precio}</p>
-        <p className='item-stock'>Cantidad disponible: {item.stock}</p>
-        <div className='item-actions'>
-          <ItemCount stockItems={stockItems} onAddToCart={handleAddToCart} />
-          
-          <Link to="/cardmj" className='buy-button'>Comprar</Link>
+      <h2 className='item-title'>{item.title}</h2>
+      <div className='item-content'>
+        <div className='item-images'>
+          <img src={item.Img} alt={item.title} />
+        </div>
+        <div className='item-details'>
+          <p className='item-price'>$ {item.price}</p>
+          <p className='item-description'>{item.description}</p>
+          <div className='item-actions'>
+            <ItemCount stock={10} initial={0} onAdd={onAdd} />
+            <Link to="/cart">
+              <button className="btn btn-primary btn-cart">
+                Terminar compra
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ItemDetail;
-
-
-

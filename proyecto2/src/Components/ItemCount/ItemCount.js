@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './CartCount.css';
+import React, { useState } from "react";
+import "./CartCount.css";
 
 function ItemCount({ cartItemCount, setCartItemCount }) {
   const [counter, setCounter] = useState(0);
@@ -16,9 +16,9 @@ function ItemCount({ cartItemCount, setCartItemCount }) {
   };
 
   const addToCart = () => {
-    if (counter) {
+    if (counter > 0) {
       const product = {
-        name: 'Producto',
+        name: "Producto",
         quantity: counter,
       };
       setCart([...cart, product]);
@@ -30,29 +30,44 @@ function ItemCount({ cartItemCount, setCartItemCount }) {
     }
   };
 
-
   return (
     <div className="container" id="itemcount">
       {counter === 0 && (
         <div className="row">
           <div className="col-md-2">
-            <button type="button" className="btn btn-outline-primary" onClick={addToCart}>
+            <button
+              type="button"
+              className="btn btn-outline-primary"
+              onClick={addToCart}
+            >
               Agregar al carrito
             </button>
           </div>
         </div>
       )}
       {counter > 0 && (
-        <div className="row ">
+        <div className="row">
           <div className="col-md-2">
-            <div className="btn-group-fixed-width" role="group" aria-label="Basic outlined example">
-              <button type="button" className="btn btn-outline-primary dieta" onClick={decrementarStock}>
+            <div
+              className="btn-group-fixed-width"
+              role="group"
+              aria-label="Basic outlined example"
+            >
+              <button
+                type="button"
+                className="btn btn-outline-primary dieta"
+                onClick={decrementarStock}
+              >
                 -
               </button>
               <button type="button" className="btn btn-outline-primary dieta">
                 {counter}
               </button>
-              <button type="button" className="btn btn-outline-primary dieta" onClick={incrementarStock}>
+              <button
+                type="button"
+                className="btn btn-outline-primary dieta"
+                onClick={incrementarStock}
+              >
                 +
               </button>
             </div>

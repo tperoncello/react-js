@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../Context/CartContext';
 import CartWidget from '../Cartwidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -9,7 +10,8 @@ import '../Home.css';
 function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedDropdown, setSelectedDropdown] = useState(null);
-  const [cartItemCount, setCartItemCount] = useState(0);
+  const { cart } = useCartContext();
+  const cartItemCount = cart.length;
 
   const dropdownRef = useRef(null);
 

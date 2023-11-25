@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,} from 'react';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import CartCount from './ItemCount/ItemCount';
 
 function ItemContainer() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://api.mercadolibre.com/sites/MLA/search?q=producto')
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data.results);
-      })
-      .catch((error) => {
-        console.error('Error al obtener datos de la API:', error);
-      });
-  }, []);
+  const [products,] = useState([]);
 
   return (
     <div className="container mt-4">
